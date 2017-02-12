@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Styling with the :default selector</title>
+  <title>Styling the details element</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Styling with the :default selector</h1>
+    <p><a href="https://github.com/russmaxdesign/default-styling">Github Page</a></p>
+    <hr>
+
+    <h2>Definitions</h2>
+    <p>The <b>:default</b> pseudo-class applies to the one or more UI elements
+    that are the default among a set of similar elements. The :default
+    pseudo-class must match any element in one of the following
+    categories:</p>
+    <ul>
+      <li><code>&lt;button&gt;</code> elements that are their form's default
+      button. A form element's default button is the first submit button in
+      tree order whose form owner is that form element.</li>
+      <li><code>&lt;input&gt;</code> elements whose type attribute is in the
+      Submit Button or Image Button state, and that are their form's default
+      button</li>
+      <li><code>&lt;input&gt;</code> elements to which the checked attribute
+      applies and that have a checked attribute</li>
+      <li><code>&lt;option&gt;</code> elements that have a selected
+      attribute</li>
+    </ul>
+    <h3>Sources:</h3>
+    <ul>
+      <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting.html#selector-default">http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting.html#selector-default</a></li>
+      <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#default-button">http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#default-button</a></li>
+    </ul>
+    <hr>
+
+    <h2>Example 1 - button type="submit"</h2>
+    <p>The first <code>&lt;button type="submit"&gt;</code> is the default element, and
+    should have red text.</p>
+    <h3>Example</h3>
+    <form class="example1" method="get">
+      <button type="reset">button type=reset</button>
+      <button type="submit">button type=submit</button>
+      <button type="submit">button type=submit</button>
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example1 button:default {
+  color: red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <h2>Example 2 - input type="submit"</h2>
+    <p>The first <code>&lt;input type="submit"&gt;</code> is the default
+    element, and should have red text.</p>
+    <h3>Example</h3>
+    <form class="example2" method="get">
+      <input type="reset" value="input type=reset">
+      <input type="submit" value="input type=submit">
+      <input type="submit" value="input type=submit">
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example2 input:default {
+  color: red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <h2>Example 3 - input type="image"</h2>
+    <p>The first <code>&lt;input type="image"&gt;</code> is the default element,
+    and should have a red border.</p>
+    <h3>Example</h3>
+    <form class="example3" method="get">
+      <input type="image" src="assets/img/default-submit.png" alt="Submit1">
+      <input type="image" src="assets/img/default-reset.png" alt="Reset">
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example3 input:default {
+  border: 2px solid red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <h2>Example 4 - radio - checked - default element should be red text</h2>
+    <p>The first <code>&lt;input type="radio"&gt;</code> element that has a
+    <code>checked</code> attribute is the default element, and should be colored
+    red.</p>
+    <h3>Example</h3>
+    <form class="example4" method="get">
+      <input id="r1" name="choice" type="radio">
+      <label for="r1">option 1</label><br>
+      <input id="r2" name="choice" type="radio" checked>
+      <label for="r2">option 2 - "checked"</label><br>
+      <input id="r3" name="choice" type="radio">
+      <label for="r3">option 3</label>
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example4 input:default + label {
+  color: red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <h2>Example 5 - checkbox - checked - default element should be red text</h2>
+    <p>The first <code>&lt;input type="checkbox"&gt;</code> element that has a
+    <code>checked</code> attribute is the default element, and should be colored
+    red.</p>
+    <h3>Example</h3>
+    <form class="example5" method="get">
+      <input id="c1" name="choice" type="checkbox">
+      <label for="c1">option 1</label><br>
+      <input id="c2" name="choice" type="checkbox" checked>
+      <label for="c2">option 2 - "checked"</label><br>
+      <input id="c3" name="choice" type="checkbox">
+      <label for="c4">option 3</label>
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example5 input:default + label {
+  color: red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <h2>Example 6 - option - selected - default element should be red text</h2>
+    <p>The first <code>&lt;option&gt;</code> element that has a
+    <code>selected</code> attribute is the default element, and should be
+    colored red.</p>
+    <p>Currently not supported in most modern browsers.</p>
+    <h3>Example</h3>
+    <form class="example6" method="get">
+      <label for="sl">Choose an option</label>
+      <select id="s1" name="s1">
+        <option value="one">One</option>
+        <option value="two" selected>Two</option>
+        <option value="three">Three</option>
+      </select>
+    </form>
+    <figure>
+      <figcaption class="markup-heading">CSS code</figcaption>
+<pre class="line-numbers"><code class="language-css">.example6 option:default {
+  color: red;
+}
+</code></pre>
+    </figure>
+    <hr>
+
+    <p style="margin-top: 2em;"><a href="https://github.com/russmaxdesign/default-styling">Github Page</a></p>
+  </div>
+
+<script src="assets/js/prism.js"></script>
+</body>
+</html>

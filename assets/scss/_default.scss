@@ -1,0 +1,23 @@
+.example1 button:default {
+  color: red;
+}
+
+.example2 input:default {
+  color: red;
+}
+
+.example3 input:default {
+  border: 2px solid red;
+}
+
+.example4 input:default + label {
+  color: red;
+}
+
+.example5 input:default + label {
+  color: red;
+}
+
+.example6 option:default {
+  color: red;
+}
